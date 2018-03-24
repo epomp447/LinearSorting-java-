@@ -1,2 +1,2 @@
 # LinearSorting-java-
-Counting Sort and Bucket Sort Implementations (Java)
+Counting Sort, Bucket Sort,and Radix Sort Implementations (Java)
