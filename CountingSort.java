@@ -31,33 +31,56 @@ public class CountingSort {
 	 *Total: O(4n+7) which is O(n) or Linear
 	 */
 	public static void countSort(int[] arr) {
-		int count[] = new int[range];// O(1) if it doesn’t contain loop, recursion and call to any other non-constant time function
-		int[] output = new int[arr.length];// O(1) if it doesn’t contain loop, recursion and call to any other non-constant time function
+		int count[] = new int[range];// O(1) if it doesnâ€™t contain loop, recursion and call to any other non-constant time function
+		int[] output = new int[arr.length];// O(1) if it doesnâ€™t contain loop, recursion and call to any other non-constant time function
 
 		// store count of each character
 		for (int i = 0; i < arr.length; i++) {// O(n): Time Complexity of a loop is considered as O(n) if the loop variables is incremented / decremented by a constant amount.
-			count[arr[i]] += 1;// O(1) if it doesn’t contain loop, recursion and call to any other non-constant time function
+			count[arr[i]] += 1;// O(1) if it doesnâ€™t contain loop, recursion and call to any other non-constant time function
 		}
 
 		for (int i = 1; i < count.length; i++) {// O(n): Time Complexity of a loop is considered as O(n) if the loop variables is incremented / decremented by a constant amount.
-			count[i] += count[i - 1];// O(1) if it doesn’t contain loop, recursion and call to any other non-constant time function
+			count[i] += count[i - 1];// O(1) if it doesnâ€™t contain loop, recursion and call to any other non-constant time function
 		}
 		// Build the output integer array
 		for (int i = 0; i < arr.length; i++) {// O(n): Time Complexity of a loop is considered as O(n) if the loop variables is incremented / decremented by a constant amount.
-			output[count[arr[i]] - 1] = arr[i];// O(1) if it doesn’t contain loop, recursion and call to any other non-constant time function
-			--count[arr[i]];// O(1) if it doesn’t contain loop, recursion and call to any other non-constant time function
+			output[count[arr[i]] - 1] = arr[i];// O(1) if it doesnâ€™t contain loop, recursion and call to any other non-constant time function
+			--count[arr[i]];// O(1) if it doesnâ€™t contain loop, recursion and call to any other non-constant time function
 		}
 		for (int i = 0; i < arr.length; i++) {// O(n): Time Complexity of a loop is considered as O(n) if the loop variables is incremented / decremented by a constant amount.
-			arr[i] = output[i];// O(1) if it doesn’t contain loop, recursion and call to any other non-constant time function
+			arr[i] = output[i];// O(1) if it doesnâ€™t contain loop, recursion and call to any other non-constant time function
 		}
 	}
 	
 }
 /*Sample Output:
 
+
 	 ***Counting Sort (N : 20)***
 
-Before: [31, 10, 15, 43, 48, 28, 1, 35, 30, 44, 31, 31, 45, 13, 30, 21, 38, 2, 17, 1]
-After:  [1, 1, 2, 10, 13, 15, 17, 21, 28, 30, 30, 31, 31, 31, 35, 38, 43, 44, 45, 48]
+Before: [45, 24, 19, 97, 34, 36, 76, 37, 21, 4, 95, 16, 48, 65, 24, 34, 53, 39, 31, 53]
+*******************************************
+*** 	index : 0	***	4	***
+*** 	index : 1	***	16	***
+*** 	index : 2	***	19	***
+*** 	index : 3	***	21	***
+*** 	index : 4	***	24	***
+*** 	index : 5	***	24	***
+*** 	index : 6	***	31	***
+*** 	index : 7	***	34	***
+*** 	index : 8	***	34	***
+*** 	index : 9	***	36	***
+*** 	index : 10	***	37	***
+*** 	index : 11	***	39	***
+*** 	index : 12	***	45	***
+*** 	index : 13	***	48	***
+*** 	index : 14	***	53	***
+*** 	index : 15	***	53	***
+*** 	index : 16	***	65	***
+*** 	index : 17	***	76	***
+*** 	index : 18	***	95	***
+*** 	index : 19	***	97	***
+*******************************************
+
 
 */
